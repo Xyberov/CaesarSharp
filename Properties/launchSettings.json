@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CaesarSharp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "CaesarSharp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
