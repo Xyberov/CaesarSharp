@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CaesarCipherProg
+namespace CaesarSharp.Core
 {
     internal static class CaesarCracker
     {

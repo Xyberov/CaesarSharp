@@ -4,7 +4,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="CaesarSharp.csproj">
+  <Project Path="CaesarSharp.CLI/CaesarSharp.CLI.csproj" />
+  <Project Path="CaesarSharp.Core/CaesarSharp.Core.csproj" />
+  <Project Path="CaesarSharp.GUI/CaesarSharp.GUI.csproj">
     <Platform Solution="*|ARM64" Project="ARM64" />
     <Platform Solution="*|x64" Project="x64" />
     <Platform Solution="*|x86" Project="x86" />

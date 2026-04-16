@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "CaesarSharp (Package)": {
+    "CaesarSharp.GUI (Package)": {
       "commandName": "MsixPackage"
     },
-    "CaesarSharp (Unpackaged)": {
+    "CaesarSharp.GUI (Unpackaged)": {
       "commandName": "Project"
     }
   }

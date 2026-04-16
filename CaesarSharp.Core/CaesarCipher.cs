@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace CaesarCipherProg
+namespace CaesarSharp.Core
 {
     internal class CaesarCipher
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace CaesarCipherProg
+namespace CaesarSharp.Core
 {
     public enum Language
     {

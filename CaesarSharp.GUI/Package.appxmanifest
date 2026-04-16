@@ -9,14 +9,14 @@
   IgnorableNamespaces="uap rescap systemai">
 
   <Identity
-    Name="5f5ae273-2e42-4f64-8d97-9660ca4240d6"
+    Name="3a9a1e5a-9f38-4a92-8d42-d2bf2092e0a5"
     Publisher="CN=Belousov"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="5f5ae273-2e42-4f64-8d97-9660ca4240d6" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="3a9a1e5a-9f38-4a92-8d42-d2bf2092e0a5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>CaesarSharp</DisplayName>
+    <DisplayName>CaesarSharp.GUI</DisplayName>
     <PublisherDisplayName>Belousov</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -35,8 +35,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="CaesarSharp"
-        Description="CaesarSharp"
+        DisplayName="CaesarSharp.GUI"
+        Description="CaesarSharp.GUI"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
