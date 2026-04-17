@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="3.0.0-preview.3.26207.106" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CaesarSharp.Core\CaesarSharp.Core.csproj" />
+  </ItemGroup>
+
 </Project>
