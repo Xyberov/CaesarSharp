@@ -1,5 +1,5 @@
-using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace CaesarSharp.GUI.Pages
 {
@@ -8,6 +8,14 @@ namespace CaesarSharp.GUI.Pages
         public HomePage()
         {
             this.InitializeComponent();
+        }
+
+        private MainWindow GetMainWindow() =>
+            (MainWindow)((App)Application.Current).MainWindow!;
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            GetMainWindow().OpenMenu();
         }
 
         private void NavTextPage_Click(object sender, RoutedEventArgs e)

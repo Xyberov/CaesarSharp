@@ -5,38 +5,54 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        <!-- Кнопка меню сверху слева -->
+        <Button Content="&#xE700;"
+                FontFamily="Segoe MDL2 Assets"
+                FontSize="16"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16,16,0,0"
+                Background="Transparent"
+                BorderThickness="0"
+                Click="MenuButton_Click"/>
 
-        <StackPanel Grid.Column="0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <TextBlock Text="Работа"
-                       FontSize="32"
-                       FontWeight="Bold"/>
-            <TextBlock Text="с шифром"
-                       FontSize="32"
-                       FontWeight="Bold"/>
-            <TextBlock Text="Цезаря"
-                       FontSize="32"
-                       FontWeight="Bold"/>
-        </StackPanel>
+        <!-- Основной контент -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="1"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Spacing="12">
-            <Button Content="Работа с текстом"
-                    Width="200"
-                    Click="NavTextPage_Click"/>
-            <Button Content="Brute force"
-                    Width="200"
-                    Click="NavCrackPage_Click"/>
-            <Button Content="Инструкция использования"
-                    Width="200"
-                    Click="NavInstructionPage_Click"/>
-        </StackPanel>
+            <!-- Левая часть — название -->
+            <StackPanel Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                <TextBlock Text="Работа"
+                           FontSize="32"
+                           FontWeight="Bold"/>
+                <TextBlock Text="с шифром"
+                           FontSize="32"
+                           FontWeight="Bold"/>
+                <TextBlock Text="Цезаря"
+                           FontSize="32"
+                           FontWeight="Bold"/>
+            </StackPanel>
+
+            <!-- Правая часть — кнопки -->
+            <StackPanel Grid.Column="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Spacing="12">
+                <Button Content="Работа с текстом"
+                        Width="200"
+                        Click="NavTextPage_Click"/>
+                <Button Content="Brute force"
+                        Width="200"
+                        Click="NavCrackPage_Click"/>
+                <Button Content="Инструкция использования"
+                        Width="200"
+                        Click="NavInstructionPage_Click"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

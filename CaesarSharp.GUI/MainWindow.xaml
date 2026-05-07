@@ -5,61 +5,55 @@
     Title="CaesarSharp">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-            <Button x:Name="MenuButton"
-                    Content="&#xE700;"
+        <!-- Основной контент -->
+        <Frame x:Name="ContentFrame"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"/>
+
+        <!-- Полноэкранное меню -->
+        <Grid x:Name="MenuOverlay"
+              Visibility="Collapsed"
+              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+            <!-- Крестик -->
+            <Button x:Name="CloseMenuButton"
+                    Content="&#xE711;"
                     FontFamily="Segoe MDL2 Assets"
                     FontSize="16"
                     HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Margin="8,0,0,0"
+                    VerticalAlignment="Top"
+                    Margin="16,16,0,0"
                     Background="Transparent"
                     BorderThickness="0"
                     Click="MenuButton_Click"/>
-        </Grid>
 
-        <Grid Grid.Row="1">
+            <!-- Содержимое меню по центру -->
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Spacing="12">
 
-            <Frame x:Name="ContentFrame"/>
+                <TextBlock Text="Меню"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,24"/>
 
-            <Rectangle x:Name="Overlay"
-                       Fill="Black"
-                       Opacity="0"
-                       Visibility="Collapsed"
-                       Tapped="Overlay_Tapped"/>
+                <Button Content="Работа с текстом"
+                        Width="540"
+                        Height="70"
+                        Click="NavTextPage_Click"/>
 
-            <Grid x:Name="SideMenu"
-                  Width="260"
-                  HorizontalAlignment="Left"
-                  Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"
-                  Visibility="Collapsed">
+                <Button Content="Brute force"
+                        Width="540"
+                        Height="70"
+                        Click="NavCrackPage_Click"/>
 
-                <StackPanel Margin="16,16,16,0">
-                    <TextBlock Text="Меню"
-                               FontSize="20"
-                               FontWeight="SemiBold"
-                               Margin="0,0,0,24"/>
-
-                    <Button Content="Работа с текстом"
-                            HorizontalAlignment="Stretch"
-                            Margin="0,0,0,8"
-                            Click="NavTextPage_Click"/>
-
-                    <Button Content="Brute force"
-                            HorizontalAlignment="Stretch"
-                            Margin="0,0,0,8"
-                            Click="NavCrackPage_Click"/>
-
-                    <Button Content="Инструкция использования"
-                            HorizontalAlignment="Stretch"
-                            Click="NavInstructionPage_Click"/>
-                </StackPanel>
-            </Grid>
+                <Button Content="Инструкция использования"
+                        Width="540"
+                        Height="70"
+                        Click="NavInstructionPage_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

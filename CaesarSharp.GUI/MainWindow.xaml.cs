@@ -1,8 +1,5 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Media.Animation;
 using CaesarSharp.GUI.Pages;
 
 namespace CaesarSharp.GUI
@@ -17,31 +14,19 @@ namespace CaesarSharp.GUI
             ContentFrame.Navigate(typeof(HomePage));
         }
 
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (_menuOpen)
-                CloseMenu();
-            else
-                OpenMenu();
-        }
-
-        private void OpenMenu()
+        public void OpenMenu()
         {
             _menuOpen = true;
-            Overlay.Visibility = Visibility.Visible;
-            Overlay.Opacity = 0.4;
-            SideMenu.Visibility = Visibility.Visible;
+            MenuOverlay.Visibility = Visibility.Visible;
         }
 
-        private void CloseMenu()
+        public void CloseMenu()
         {
             _menuOpen = false;
-            Overlay.Opacity = 0;
-            Overlay.Visibility = Visibility.Collapsed;
-            SideMenu.Visibility = Visibility.Collapsed;
+            MenuOverlay.Visibility = Visibility.Collapsed;
         }
 
-        private void Overlay_Tapped(object sender, TappedRoutedEventArgs e)
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             CloseMenu();
         }
