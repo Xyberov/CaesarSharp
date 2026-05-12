@@ -1,59 +1,7 @@
-<Window
-    x:Class="CaesarSharp.GUI.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="CaesarSharp">
+<Window x:Class="CaesarSharp.GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Grid>
+    <Frame x:Name="RootFrame" Background="#FF000000"/>
 
-        <!-- Основной контент -->
-        <Frame x:Name="ContentFrame"
-            HorizontalAlignment="Stretch"
-            VerticalAlignment="Stretch"/>
-
-        <!-- Полноэкранное меню -->
-        <Grid x:Name="MenuOverlay"
-              Visibility="Collapsed"
-              Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-            <!-- Крестик -->
-            <Button x:Name="CloseMenuButton"
-                    Content="&#xE711;"
-                    FontFamily="Segoe MDL2 Assets"
-                    FontSize="16"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="16,16,0,0"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    Click="MenuButton_Click"/>
-
-            <!-- Содержимое меню по центру -->
-            <StackPanel HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Spacing="12">
-
-                <TextBlock Text="Меню"
-                           FontSize="28"
-                           FontWeight="Bold"
-                           HorizontalAlignment="Center"
-                           Margin="0,0,0,24"/>
-
-                <Button Content="Работа с текстом"
-                        Width="540"
-                        Height="70"
-                        Click="NavTextPage_Click"/>
-
-                <Button Content="Brute force"
-                        Width="540"
-                        Height="70"
-                        Click="NavCrackPage_Click"/>
-
-                <Button Content="Инструкция использования"
-                        Width="540"
-                        Height="70"
-                        Click="NavInstructionPage_Click"/>
-            </StackPanel>
-        </Grid>
-    </Grid>
 </Window>

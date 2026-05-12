@@ -1,7 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>CaesarSharp.GUI</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -14,7 +14,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Assets\Fonts\Bitter-Bold.ttf" />
+    <None Remove="Assets\Fonts\Bitter-Regular.ttf" />
+    <None Remove="Assets\Fonts\montserrat-subrayada-latin-400-normal.ttf" />
+    <None Remove="Assets\Fonts\montserrat-subrayada-latin-700-normal.ttf" />
     <None Remove="Pages\CrackPage.xaml" />
+    <None Remove="Pages\HomePage.xaml" />
+    <None Remove="Pages\InstructionPage.xaml" />
+    <None Remove="Pages\TextPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,22 +47,42 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1721" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1839" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Assets\Fonts\Bitter-Bold.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Fonts\Bitter-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Fonts\montserrat-subrayada-latin-400-normal.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Fonts\montserrat-subrayada-latin-700-normal.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\InstructionPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Pages\CrackPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Update="Pages\HomePage.xaml">
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\TextPage.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\InstructionPage.xaml">
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Pages\HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\TextPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
+    </Page>
   </ItemGroup>
 
   <!--

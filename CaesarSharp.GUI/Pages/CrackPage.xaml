@@ -1,14 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Page
-    x:Class="CaesarSharp.GUI.Pages.CrackPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:CaesarSharp.GUI.Pages"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+<Page x:Class="CaesarSharp.GUI.Pages.CrackPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="#FF000000">
 
     <Grid>
+        <Button Content="&#xE72B;"
+                FontFamily="Segoe MDL2 Assets"
+                FontSize="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="16,16,0,0"
+                Background="Transparent"
+                BorderThickness="0"
+                Foreground="White"
+                Click="BackButton_Click"/>
 
+        <TextBlock Text="Взлом смещения"
+                   Foreground="White"
+                   FontSize="32"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
     </Grid>
+
 </Page>

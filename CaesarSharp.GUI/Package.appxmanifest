@@ -9,11 +9,11 @@
   IgnorableNamespaces="uap rescap systemai">
 
   <Identity
-    Name="3a9a1e5a-9f38-4a92-8d42-d2bf2092e0a5"
+    Name="4d3af68e-6b6d-4bb7-b340-58e45ca65a05"
     Publisher="CN=Belousov"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="3a9a1e5a-9f38-4a92-8d42-d2bf2092e0a5" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="4d3af68e-6b6d-4bb7-b340-58e45ca65a05" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CaesarSharp.GUI</DisplayName>

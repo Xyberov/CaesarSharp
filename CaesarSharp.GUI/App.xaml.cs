@@ -26,7 +26,7 @@ namespace CaesarSharp.GUI
     /// </summary>
     public partial class App : Application
     {
-        public Window? MainWindow { get; private set; }
+        private Window? _window;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -43,8 +43,8 @@ namespace CaesarSharp.GUI
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            MainWindow = new MainWindow();
-            MainWindow.Activate();
+            _window = new MainWindow();
+            _window.Activate();
         }
     }
 }

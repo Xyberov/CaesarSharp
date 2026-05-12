@@ -2,57 +2,177 @@
     x:Class="CaesarSharp.GUI.Pages.HomePage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="#FF000000">
 
-    <Grid>
-        <!-- Кнопка меню сверху слева -->
-        <Button Content="&#xE700;"
-                FontFamily="Segoe MDL2 Assets"
-                FontSize="16"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="16,16,0,0"
-                Background="Transparent"
-                BorderThickness="0"
-                Click="MenuButton_Click"/>
+    <Viewbox Stretch="Uniform">
+        <Grid Width="1440"
+              Height="1024"
+              Background="#FF000000">
 
-        <!-- Основной контент -->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Grid Width="624"
+                  Height="440"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Center"
+                  Margin="0,-48,0,-48"
+                  Background="Transparent">
 
-            <!-- Левая часть — название -->
-            <StackPanel Grid.Column="0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center">
-                <TextBlock Text="Работа"
-                           FontSize="32"
-                           FontWeight="Bold"/>
-                <TextBlock Text="с шифром"
-                           FontSize="32"
-                           FontWeight="Bold"/>
-                <TextBlock Text="Цезаря"
-                           FontSize="32"
-                           FontWeight="Bold"/>
-            </StackPanel>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <!-- Правая часть — кнопки -->
-            <StackPanel Grid.Column="1"
+                <Button Grid.Row="0"
+                        Content="Работа с текстом"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        FontSize="40"
+                        Width="597"
+                        Height="116"
+                        Background="#FF29750D"
+                        Foreground="White"
+                        BorderThickness="0"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Spacing="12">
-                <Button Content="Работа с текстом"
-                        Width="200"
+                        Margin="14,15,13,16"
                         Click="NavTextPage_Click"/>
-                <Button Content="Brute force"
-                        Width="200"
+
+                <Button Grid.Row="1"
+                        Content="Взлом смещения"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Width="597"
+                        Height="116"
+                        FontSize="40"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="#FF29750D"
+                        Foreground="White"
+                        BorderThickness="0"
                         Click="NavCrackPage_Click"/>
-                <Button Content="Инструкция использования"
-                        Width="200"
+
+                <Button Grid.Row="2"
+                        Content="Инструкция использования"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Width="595"
+                        Height="116"
+                        FontSize="40"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="#FF29750D"
+                        Foreground="White"
+                        BorderThickness="0"
                         Click="NavInstructionPage_Click"/>
-            </StackPanel>
+            </Grid>
+
+            <Canvas Width="960"
+                    Height="920"
+                    Margin="0,48,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Background="Transparent">
+
+                <!-- линия1 -->
+                <Line X1="660"
+                      Y1="317"
+                      X2="880"
+                      Y2="317"
+                      Stroke="White"
+                      StrokeThickness="9"/>
+
+                <Ellipse Width="43"
+                         Height="43"
+                         Fill="White"
+                         Canvas.Left="843"
+                         Canvas.Top="296"/>
+
+                <!-- линия2 -->
+                <Line X1="0"
+                      Y1="465"
+                      X2="900"
+                      Y2="465"
+                      Stroke="White"
+                      StrokeThickness="9"/>
+
+                <Ellipse Width="43"
+                         Height="43"
+                         Fill="White"
+                         Canvas.Left="890"
+                         Canvas.Top="443"/>
+
+                <!-- линия3 -->
+                <Line X1="600"
+                      Y1="612"
+                      X2="800"
+                      Y2="612"
+                      Stroke="White"
+                      StrokeThickness="9"/>
+
+                <Ellipse Width="43"
+                         Height="43"
+                         Fill="White"
+                         Canvas.Left="768"
+                         Canvas.Top="590"/>
+
+                <!-- внеш.круг -->
+                <Ellipse Width="695"
+                         Height="695"
+                         Fill="#FF175103"
+                         Canvas.Left="20"
+                         Canvas.Top="118"/>
+
+                <!-- сред.круг -->
+                <Ellipse Width="652"
+                         Height="652"
+                         Fill="#FF123E03"
+                         Canvas.Left="41"
+                         Canvas.Top="139"/>
+
+                <!-- внутр. круг -->
+                <Ellipse Width="600"
+                         Height="600"
+                         Fill="#FF000000"
+                         Canvas.Left="66"
+                         Canvas.Top="165"/>
+
+                <!-- текст -->
+                <Grid Width="704"
+                      Height="704"
+                      Canvas.Left="16"
+                      Canvas.Top="112"
+                      Background="Transparent">
+
+                    <TextBlock Text="Работа"
+                               FontFamily="ms-appx:///Assets/Fonts/montserrat-subrayada-latin-700-normal.ttf#Montserrat Subrayada"
+                               FontSize="80"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Width="272"
+                               Height="96"
+                               Margin="0,1,200,180"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                    <TextBlock Text="с&#160;шифром"
+                               FontFamily="ms-appx:///Assets/Fonts/montserrat-subrayada-latin-400-normal.ttf#Montserrat Subrayada"
+                               FontSize="80"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Height="96"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+
+                    <TextBlock Text="Цезаря"
+                               FontFamily="ms-appx:///Assets/Fonts/montserrat-subrayada-latin-700-normal.ttf#Montserrat Subrayada"
+                               FontSize="80"
+                               FontWeight="Bold"
+                               Foreground="White"
+                               Width="288"
+                               Height="96"
+                               Margin="180,180,0,0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                </Grid>
+
+            </Canvas>
         </Grid>
-    </Grid>
+    </Viewbox>
 </Page>

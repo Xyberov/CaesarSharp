@@ -10,14 +10,6 @@ namespace CaesarSharp.GUI.Pages
             this.InitializeComponent();
         }
 
-        private MainWindow GetMainWindow() =>
-            (MainWindow)((App)Application.Current).MainWindow!;
-
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
-        {
-            GetMainWindow().OpenMenu();
-        }
-
         private void NavTextPage_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(TextPage));
