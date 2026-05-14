@@ -3,23 +3,251 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Background="#FF000000">
 
-    <Grid>
-        <Button Content="&#xE72B;"
-                FontFamily="Segoe MDL2 Assets"
-                FontSize="20"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="16,16,0,0"
-                Background="Transparent"
-                BorderThickness="0"
-                Foreground="White"
-                Click="BackButton_Click"/>
+    <Page.Resources>
+        <Style x:Key="FixedTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="#b8b8b8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#FF000000"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver"/>
+                                    <VisualState x:Name="Focused"/>
+                                    <VisualState x:Name="Disabled"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border Background="#FFC9C9C9" CornerRadius="4"/>
+                            <ScrollViewer x:Name="ContentElement"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Auto"
+                                          IsTabStop="False"
+                                          AutomationProperties.AccessibilityView="Raw"/>
+                            <TextBlock x:Name="PlaceholderTextContentPresenter"
+                                       Text="{TemplateBinding PlaceholderText}"
+                                       Foreground="#80000000"
+                                       FontSize="{TemplateBinding FontSize}"
+                                       Margin="{TemplateBinding Padding}"
+                                       IsHitTestVisible="False"
+                                       TextWrapping="{TemplateBinding TextWrapping}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
-        <TextBlock Text="Работа с текстом"
-                   Foreground="White"
-                   FontSize="32"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-    </Grid>
+    <Viewbox Stretch="Uniform">
+        <Grid Width="1440" Height="1024" Background="#FF000000">
+
+            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Width="1440" Height="97" Fill="#FF103D00"/>
+
+            <Button Content="←" Margin="8,12,0,0"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Width="72" Height="72" FontSize="60"
+                    Padding="0,-12,0,0"
+                    Background="Transparent" BorderThickness="0"
+                    Foreground="White"
+                    Click="BackButton_Click"/>
+
+            <TextBlock Text="Работа&#160;с&#160;текстом" FontSize="48"
+                       Margin="100,16,0,0"
+                       FontFamily="ms-appx:///Assets/Fonts/montserrat-subrayada-latin-700-normal.ttf#Montserrat Subrayada"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="64" FontWeight="Bold" Foreground="White"/>
+
+            <Grid Margin="0,96,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Width="1440" Height="285" Background="Transparent">
+
+                <TextBlock Text="Режим работы:" FontSize="30" Foreground="White"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                           Height="40" Width="240" Margin="0,8,888,0" TextAlignment="Center"/>
+
+                <Button x:Name="EncryptButton" Content="Шифровать"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Width="184" Height="56" FontSize="24" CornerRadius="10"
+                        Background="#FF3CAE11" Foreground="White" BorderThickness="0"
+                        Margin="0,8,468,0"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Click="EncryptButton_Click"/>
+
+                <Button x:Name="DecryptButton" Content="Дешифровать"
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Width="184" Height="56" FontSize="24" CornerRadius="10"
+                        Background="#FF29750D" Foreground="White" BorderThickness="0"
+                        Margin="-78,8,0,0"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Click="DecryptButton_Click"/>
+
+                <TextBlock Text="Сдвиг:" FontSize="30" Foreground="White"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                           Height="40" Width="96" Margin="262,8,0,0" TextAlignment="Center"/>
+
+                <ComboBox x:Name="ShiftBox"
+                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Width="100" Height="56" FontSize="24"
+                          Margin="478,8,0,0" CornerRadius="10"
+                          FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                          Background="#FF29750D" BorderBrush="#FF29750D"
+                          Foreground="White">
+                    <ComboBoxItem Content="1"  IsSelected="True"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                    <ComboBoxItem Content="6"/>
+                    <ComboBoxItem Content="7"/>
+                    <ComboBoxItem Content="8"/>
+                    <ComboBoxItem Content="9"/>
+                    <ComboBoxItem Content="10"/>
+                    <ComboBoxItem Content="11"/>
+                    <ComboBoxItem Content="12"/>
+                    <ComboBoxItem Content="13"/>
+                    <ComboBoxItem Content="14"/>
+                    <ComboBoxItem Content="15"/>
+                    <ComboBoxItem Content="16"/>
+                    <ComboBoxItem Content="17"/>
+                    <ComboBoxItem Content="18"/>
+                    <ComboBoxItem Content="19"/>
+                    <ComboBoxItem Content="20"/>
+                    <ComboBoxItem Content="21"/>
+                    <ComboBoxItem Content="22"/>
+                    <ComboBoxItem Content="23"/>
+                    <ComboBoxItem Content="24"/>
+                    <ComboBoxItem Content="25"/>
+                    <ComboBoxItem Content="26"/>
+                    <ComboBoxItem Content="27"/>
+                    <ComboBoxItem Content="28"/>
+                    <ComboBoxItem Content="29"/>
+                    <ComboBoxItem Content="30"/>
+                    <ComboBoxItem Content="31"/>
+                    <ComboBoxItem Content="32"/>
+                    <ComboBoxItem Content="33"/>
+                    <ComboBoxItem Content="34"/>
+                    <ComboBoxItem Content="35"/>
+                </ComboBox>
+
+                <TextBlock Text="Язык:" FontSize="30" Foreground="White"
+                           FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                           HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Height="40" Width="80" Margin="710,8,0,0" TextAlignment="Center"/>
+
+                <ComboBox x:Name="LanguageBox"
+                          HorizontalAlignment="Center" VerticalAlignment="Center"
+                          Width="158" Height="56" FontSize="24"
+                          FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                          Margin="972,8,0,0" CornerRadius="10"
+                          Background="#FF29750D" BorderBrush="#FF29750D">
+                    <ComboBoxItem Content="Беларуская"/>
+                    <ComboBoxItem Content="Čeština"/>
+                    <ComboBoxItem Content="English"/>
+                    <ComboBoxItem Content="Français"/>
+                    <ComboBoxItem Content="Deutsch"/>
+                    <ComboBoxItem Content="Ελληνικά"/>
+                    <ComboBoxItem Content="Italiano"/>
+                    <ComboBoxItem Content="Қазақша"/>
+                    <ComboBoxItem Content="Polski"/>
+                    <ComboBoxItem Content="Português"/>
+                    <ComboBoxItem Content="Русский" IsSelected="True"/>
+                    <ComboBoxItem Content="Español"/>
+                    <ComboBoxItem Content="Українська"/>
+                </ComboBox>
+            </Grid>
+
+            <Canvas Margin="0,384,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Width="1440" Height="640" Background="Transparent">
+
+                <Line Canvas.Top="250" X1="0" X2="1076" Y1="0" Y2="0"
+                      StrokeThickness="9" Stroke="White"/>
+                <Ellipse Width="43" Height="43" Fill="White"
+                         Canvas.Left="1040" Canvas.Top="228"/>
+
+                <Line Canvas.Left="500" Canvas.Top="100" X1="0" X2="500" Y1="0" Y2="0"
+                      StrokeThickness="9" Stroke="White"/>
+                <Ellipse Width="43" Height="43" Fill="White"
+                         Canvas.Left="976" Canvas.Top="78"/>
+
+                <Line Canvas.Left="500" Canvas.Top="410" X1="0" X2="500" Y1="0" Y2="0"
+                      StrokeThickness="9" Stroke="White"/>
+                <Ellipse Width="43" Height="43" Fill="White"
+                         Canvas.Left="976" Canvas.Top="388"/>
+
+                <Line X1="0" X2="130" Y1="0" Y2="130"
+                      StrokeThickness="9" Stroke="White"
+                      Canvas.Left="241" Canvas.Top="251"/>
+                <Line Canvas.Left="400" Canvas.Top="250" X1="0" X2="100" Y1="0" Y2="-100"
+                      StrokeThickness="9" Stroke="White"/>
+
+                <Button Content="Загрузить файл ⤒" Width="254" Height="51"
+                        FontSize="24" Background="#FF29750D" Foreground="White" BorderThickness="0"
+                        Canvas.Left="1060" Canvas.Top="74" CornerRadius="10"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Click="LoadFileButton_Click"/>
+                <Button Content="Сохранить файл ⤓" Width="254" Height="51"
+                        FontSize="24" Background="#FF29750D" Foreground="White" BorderThickness="0"
+                        Canvas.Left="1060" Canvas.Top="384" CornerRadius="10"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Click="SaveFileButton_Click"/>
+
+                <TextBox x:Name="InputBox"
+                        PlaceholderText="Введите текст..."
+                        Style="{StaticResource FixedTextBoxStyle}"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Width="740" Height="200" CornerRadius="10"
+                        Canvas.Left="184" Canvas.Top="0"/>
+
+                <Button Content="📋" ToolTipService.ToolTip="Вставить"
+                        Width="52" Height="52" FontSize="24"
+                        Background="Transparent" Foreground="#80000000" BorderThickness="0"
+                        CornerRadius="0"
+                        Canvas.Left="872" Canvas.Top="148"
+                        Click="PasteInputButton_Click">
+                    <Button.Resources>
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#40000000"/>
+                        <SolidColorBrush x:Key="ButtonBackgroundPressed"     Color="#80000000"/>
+                    </Button.Resources>
+                </Button>
+
+                <TextBox x:Name="OutputBox"
+                        PlaceholderText="Результат появится здесь..."
+                        Style="{StaticResource FixedTextBoxStyle}"
+                        Width="740" Height="200"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        Canvas.Left="184" Canvas.Top="312" CornerRadius="10"
+                        IsReadOnly="True"/>
+
+                <Button Content="📑" ToolTipService.ToolTip="Копировать"
+        Width="52" Height="52" FontSize="24"
+        Background="Transparent" Foreground="#80000000" BorderThickness="0"
+        CornerRadius="0"
+        Canvas.Left="872" Canvas.Top="460"
+        Click="CopyOutputButton_Click">
+                    <Button.Resources>
+                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#40000000"/>
+                        <SolidColorBrush x:Key="ButtonBackgroundPressed"     Color="#80000000"/>
+                    </Button.Resources>
+                </Button>
+
+                <Button Content="Запуск ⇅" Width="254" Height="51"
+                        Background="#FF29750D" Foreground="White" BorderThickness="0"
+                        FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                        FontSize="24" Canvas.Left="424" Canvas.Top="224" CornerRadius="10"
+                        Click="RunButton_Click"/>
+
+            </Canvas>
+
+        </Grid>
+    </Viewbox>
 
 </Page>

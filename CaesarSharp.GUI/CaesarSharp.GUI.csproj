@@ -51,6 +51,9 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CaesarSharp.Core\CaesarSharp.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Update="Assets\Fonts\Bitter-Bold.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
