@@ -27,7 +27,7 @@ namespace CaesarSharp.CLI
 
             var outputOption = new Option<string?>("--output")
             {
-                Description = "Путь к выходному файлу (если не указан — вывод в консоль)."
+                Description = "Путь к выходному файлу или папке (для пакетной обработки)."
             };
 
             var keyOption = new Option<int>("--key")
@@ -36,21 +36,38 @@ namespace CaesarSharp.CLI
                 Required = true
             };
 
+            var filesOption = new Option<string[]?>("--files")
+            {
+                Description = "Пути к нескольким входным файлам для пакетной обработки.",
+                AllowMultipleArgumentsPerToken = true
+            };
+
             var encryptCommand = new Command("encrypt", "Зашифровать текст.");
             encryptCommand.Options.Add(langOption);
             encryptCommand.Options.Add(keyOption);
             encryptCommand.Options.Add(inputOption);
             encryptCommand.Options.Add(fileOption);
             encryptCommand.Options.Add(outputOption);
+            encryptCommand.Options.Add(filesOption);
 
             encryptCommand.SetAction(parseResult =>
             {
                 try
                 {
                     var language = ParseLanguage(parseResult.GetValue(langOption)!);
-                    var text = ReadInput(parseResult.GetValue(inputOption), parseResult.GetValue(fileOption));
-                    var result = CaesarCipher.Encrypt(text, parseResult.GetValue(keyOption), language);
-                    WriteOutput(result, parseResult.GetValue(outputOption));
+                    var files = parseResult.GetValue(filesOption);
+
+                    if (files != null && files.Length > 0)
+                    {
+                        BatchProcessor.Encrypt(files, parseResult.GetValue(keyOption), language,
+                            parseResult.GetValue(outputOption));
+                    }
+                    else
+                    {
+                        var text = ReadInput(parseResult.GetValue(inputOption), parseResult.GetValue(fileOption));
+                        var result = CaesarCipher.Encrypt(text, parseResult.GetValue(keyOption), language);
+                        WriteOutput(result, parseResult.GetValue(outputOption));
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -66,15 +83,26 @@ namespace CaesarSharp.CLI
             decryptCommand.Options.Add(inputOption);
             decryptCommand.Options.Add(fileOption);
             decryptCommand.Options.Add(outputOption);
+            decryptCommand.Options.Add(filesOption);
 
             decryptCommand.SetAction(parseResult =>
             {
                 try
                 {
                     var language = ParseLanguage(parseResult.GetValue(langOption)!);
-                    var text = ReadInput(parseResult.GetValue(inputOption), parseResult.GetValue(fileOption));
-                    var result = CaesarCipher.Decrypt(text, parseResult.GetValue(keyOption), language);
-                    WriteOutput(result, parseResult.GetValue(outputOption));
+                    var files = parseResult.GetValue(filesOption);
+
+                    if (files != null && files.Length > 0)
+                    {
+                        BatchProcessor.Decrypt(files, parseResult.GetValue(keyOption), language,
+                            parseResult.GetValue(outputOption));
+                    }
+                    else
+                    {
+                        var text = ReadInput(parseResult.GetValue(inputOption), parseResult.GetValue(fileOption));
+                        var result = CaesarCipher.Decrypt(text, parseResult.GetValue(keyOption), language);
+                        WriteOutput(result, parseResult.GetValue(outputOption));
+                    }
                 }
                 catch (Exception ex)
                 {
