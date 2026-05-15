@@ -140,11 +140,11 @@
                 </ComboBox>
 
                 <Button Content="📑" ToolTipService.ToolTip="Копировать"
-Width="52" Height="52" FontSize="24"
-Background="Transparent" Foreground="#80000000" BorderThickness="0"
-CornerRadius="0"
-Canvas.Left="869" Canvas.Top="750"
-Click="CopyOutputButton_Click">
+                        Width="52" Height="52" FontSize="24"
+                        Background="Transparent" Foreground="#80000000" BorderThickness="0"
+                        CornerRadius="0"
+                        Canvas.Left="869" Canvas.Top="750"
+                        Click="CopyOutputButton_Click">
                     <Button.Resources>
                         <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#40000000"/>
                         <SolidColorBrush x:Key="ButtonBackgroundPressed"     Color="#80000000"/>
@@ -152,11 +152,11 @@ Click="CopyOutputButton_Click">
                 </Button>
 
                 <Button Content="📋" ToolTipService.ToolTip="Вставить"
-        Width="52" Height="52" FontSize="24"
-        Background="Transparent" Foreground="#80000000" BorderThickness="0"
-        CornerRadius="0"
-        Canvas.Left="869" Canvas.Top="334"
-        Click="PasteInputButton_Click">
+                        Width="52" Height="52" FontSize="24"
+                        Background="Transparent" Foreground="#80000000" BorderThickness="0"
+                        CornerRadius="0"
+                        Canvas.Left="869" Canvas.Top="334"
+                        Click="PasteInputButton_Click">
                     <Button.Resources>
                         <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#40000000"/>
                         <SolidColorBrush x:Key="ButtonBackgroundPressed"     Color="#80000000"/>
