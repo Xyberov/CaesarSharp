@@ -101,6 +101,7 @@
   <PropertyGroup>
 	 <PublishReadyToRun>False</PublishReadyToRun>
 	  <PublishTrimmed>False</PublishTrimmed>
+	  <WindowsPackageType>None</WindowsPackageType>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
