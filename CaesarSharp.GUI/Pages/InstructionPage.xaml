@@ -3,23 +3,77 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Background="#FF000000">
 
-    <Grid>
-        <Button Content="&#xE72B;"
-                FontFamily="Segoe MDL2 Assets"
-                FontSize="20"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="16,16,0,0"
-                Background="Transparent"
-                BorderThickness="0"
-                Foreground="White"
-                Click="BackButton_Click"/>
+    <Viewbox Stretch="Uniform">
+        <Grid Width="1440" Height="1024" Background="#FF000000">
 
-        <TextBlock Text="Инструкция использования"
-                   Foreground="White"
-                   FontSize="32"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
-    </Grid>
+            <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Width="1440" Height="97" Fill="#FF103D00"/>
+
+            <Button Content="←" Margin="8,12,0,0"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Width="72" Height="72" FontSize="60"
+                    Padding="0,-14,0,0"
+                    Background="Transparent" BorderThickness="0"
+                    Foreground="White"
+                    Click="BackButton_Click"/>
+
+            <TextBlock Text="Инструкция&#160;пользования" FontSize="48"
+                       Margin="100,18,0,0"
+                       FontFamily="ms-appx:///Assets/Fonts/montserrat-subrayada-latin-700-normal.ttf#Montserrat Subrayada"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Height="64" FontWeight="Bold" Foreground="White"/>
+
+            <Canvas Margin="0,96,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Width="1440" Height="928" Background="Transparent">
+
+                <Line X1="0" X2="0" Y1="1" Y2="820"
+                      StrokeThickness="9" Stroke="White"
+                      Canvas.Left="1159"/>
+                <Ellipse Width="43" Height="43" Fill="White"
+                         Canvas.Left="1139" Canvas.Top="818"/>
+
+                <Line X1="0" X2="0" Y1="0" Y2="235"
+                      StrokeThickness="9" Stroke="White"
+                      Canvas.Left="1324" Canvas.Top="467"/>
+                <Ellipse Width="43" Height="43" Fill="White"
+                         Canvas.Left="1303" Canvas.Top="701"/>
+
+                <Line X1="-1" X2="163" Y1="0" Y2="132"
+                      StrokeThickness="9" Stroke="White"
+                      Canvas.Left="1162" Canvas.Top="339"/>
+
+                <Line X1="0" X2="-100" Y1="0" Y2="75"
+                      StrokeThickness="9" Stroke="White"
+                      Canvas.Left="1160" Canvas.Top="149"/>
+
+                <Border Width="740" Height="542"
+                        Canvas.Left="350" Canvas.Top="190"
+                        Background="#FFC9C9C9" CornerRadius="10">
+                    <ScrollViewer Padding="12" VerticalScrollBarVisibility="Auto">
+                        <TextBlock x:Name="InstructionText"
+                                   FontSize="24" TextWrapping="Wrap"
+                                   Foreground="#FF000000"
+                                   FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"/>
+                    </ScrollViewer>
+                </Border>
+
+                <TextBlock Text="Язык:" FontSize="24" Foreground="White"
+                           FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                           Canvas.Left="593" Canvas.Top="110" Height="29" Width="67"/>
+
+                <ComboBox x:Name="LanguageBox"
+                          Width="158" Height="57" FontSize="24"
+                          FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
+                          Background="#FF29750D" BorderBrush="#FF29750D"
+                          Foreground="White" CornerRadius="10"
+                          Canvas.Left="687" Canvas.Top="97"
+                          SelectionChanged="LanguageBox_SelectionChanged">
+                    <ComboBoxItem Content="Русский"  Tag="Russian"/>
+                    <ComboBoxItem Content="English"  Tag="English"/>
+                </ComboBox>
+
+            </Canvas>
+        </Grid>
+    </Viewbox>
 
 </Page>

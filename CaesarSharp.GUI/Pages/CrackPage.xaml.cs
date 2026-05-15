@@ -24,7 +24,8 @@ namespace CaesarSharp.GUI.Pages
         private void RunButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedItem = (ComboBoxItem)LanguageBox.SelectedItem;
-            CoreLanguage language = (CoreLanguage)Enum.Parse(typeof(CoreLanguage), selectedItem.Tag.ToString());
+            if (LanguageBox.SelectedItem is not ComboBoxItem langItem) return;
+            CoreLanguage language = (CoreLanguage)Enum.Parse(typeof(CoreLanguage), langItem.Tag.ToString());
             string text = InputBox.Text;
 
             try

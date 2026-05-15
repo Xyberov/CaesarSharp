@@ -60,7 +60,7 @@
                     Click="BackButton_Click"/>
 
             <TextBlock Text="Работа&#160;с&#160;текстом" FontSize="48"
-                       Margin="100,16,0,0"
+                       Margin="100,18,0,0"
                        FontFamily="ms-appx:///Assets/Fonts/montserrat-subrayada-latin-700-normal.ttf#Montserrat Subrayada"
                        HorizontalAlignment="Left" VerticalAlignment="Top"
                        Height="64" FontWeight="Bold" Foreground="White"/>
