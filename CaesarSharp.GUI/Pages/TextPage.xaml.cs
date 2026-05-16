@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
@@ -12,6 +14,7 @@ namespace CaesarSharp.GUI.Pages
     public sealed partial class TextPage : Page
     {
         private bool _encryptMode = true;
+        private IReadOnlyList<StorageFile> _batchFiles = null;
 
         private static readonly SolidColorBrush ActiveBrush =
             new SolidColorBrush(Windows.UI.Color.FromArgb(255, 60, 174, 17));
@@ -47,17 +50,41 @@ namespace CaesarSharp.GUI.Pages
             UpdateModeButtons();
         }
 
-        private void RunButton_Click(object sender, RoutedEventArgs e)
+        private async void RunButton_Click(object sender, RoutedEventArgs e)
         {
             int shift = ShiftBox.SelectedIndex + 1;
             var language = (Language)LanguageBox.SelectedIndex;
-            var text = InputBox.Text;
 
             try
             {
-                OutputBox.Text = _encryptMode
-                    ? CaesarCipher.Encrypt(text, shift, language)
-                    : CaesarCipher.Decrypt(text, shift, language);
+                if (_batchFiles != null && _batchFiles.Count > 0)
+                {
+                    var folderPicker = new FolderPicker();
+                    folderPicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+                    folderPicker.FileTypeFilter.Add("*");
+
+                    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
+                    WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hwnd);
+
+                    var folder = await folderPicker.PickSingleFolderAsync();
+                    if (folder == null) return;
+
+                    var paths = _batchFiles.Select(f => f.Path).ToList();
+                    if (_encryptMode)
+                        BatchProcessor.Encrypt(paths, shift, language, folder.Path);
+                    else
+                        BatchProcessor.Decrypt(paths, shift, language, folder.Path);
+
+                    OutputBox.Text = $"Готово. Обработано файлов: {_batchFiles.Count}.\nРезультаты сохранены в: {folder.Path}";
+                    _batchFiles = null;
+                }
+                else
+                {
+                    var text = InputBox.Text;
+                    OutputBox.Text = _encryptMode
+                        ? CaesarCipher.Encrypt(text, shift, language)
+                        : CaesarCipher.Decrypt(text, shift, language);
+                }
             }
             catch (ArgumentException ex)
             {
@@ -93,9 +120,20 @@ namespace CaesarSharp.GUI.Pages
             var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
             WinRT.Interop.InitializeWithWindow.Initialize(picker, hwnd);
 
-            StorageFile file = await picker.PickSingleFileAsync();
-            if (file != null)
-                InputBox.Text = await FileIO.ReadTextAsync(file);
+            var files = await picker.PickMultipleFilesAsync();
+            if (files == null || files.Count == 0) return;
+
+            if (files.Count == 1)
+            {
+                _batchFiles = null;
+                InputBox.Text = await FileIO.ReadTextAsync(files[0]);
+            }
+            else
+            {
+                _batchFiles = files;
+                InputBox.Text = $"Пакетная обработка: выбрано файлов — {files.Count}.\nВыберите нужные настройки и нажмите «Запустить» для продолжения.";
+                OutputBox.Text = string.Empty;
+            }
         }
 
         private async void SaveFileButton_Click(object sender, RoutedEventArgs e)

@@ -26,6 +26,17 @@ namespace CaesarSharp.GUI.Pages
             "4. Нажмите «Запуск». Исходный текст появится в нижнем поле.\n\n" +
             "Важно: если выбрать неправильный язык или сдвиг — результат будет нечитаемым. Убедитесь, что язык и сдвиг совпадают с теми, что использовались при шифровании.\n\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "ПАКЕТНАЯ ОБРАБОТКА ФАЙЛОВ\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "Если нужно зашифровать или расшифровать сразу несколько файлов:\n\n" +
+            "1. На главном экране нажмите «Работа с текстом».\n" +
+            "2. Выберите режим («Шифровать» или «Дешифровать»), язык и сдвиг.\n" +
+            "3. Нажмите «Загрузить файл» и выделите сразу несколько файлов (удерживайте Ctrl при выборе).\n" +
+            "4. В верхнем поле появится сообщение о количестве выбранных файлов.\n" +
+            "5. Нажмите «Запуск». Программа попросит выбрать папку для сохранения результатов.\n" +
+            "6. Укажите папку и нажмите «Выбрать папку». Обработанные файлы появятся в ней с суффиксами _encrypted или _decrypted.\n\n" +
+            "Важно: папка для сохранения должна уже существовать — программа её не создаёт.\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
             "ВЗЛОМ ШИФРА\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
             "Если у вас есть зашифрованный текст, но сдвиг неизвестен — программа попробует определить его автоматически.\n\n" +
@@ -64,6 +75,17 @@ namespace CaesarSharp.GUI.Pages
             "3. Enter the encrypted text into the upper field.\n" +
             "4. Click \"Run\". The original text will appear in the lower field.\n\n" +
             "Important: if the wrong language or shift is selected, the result will be unreadable. Make sure the language and shift match exactly what was used during encryption.\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "BATCH FILE PROCESSING\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "To encrypt or decrypt multiple files at once:\n\n" +
+            "1. On the main screen, click \"Text Mode\".\n" +
+            "2. Select the mode (\"Encrypt\" or \"Decrypt\"), language, and shift.\n" +
+            "3. Click \"Load File\" and select multiple files at once (hold Ctrl while selecting).\n" +
+            "4. The upper field will show a message with the number of selected files.\n" +
+            "5. Click \"Run\". The program will ask you to choose a folder to save the results.\n" +
+            "6. Select a folder and click \"Select Folder\". The processed files will appear there with _encrypted or _decrypted suffixes.\n\n" +
+            "Important: the destination folder must already exist — the program will not create it.\n\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
             "CIPHER CRACKING\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
