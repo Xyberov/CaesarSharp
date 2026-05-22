@@ -1,12 +1,11 @@
-<Solution>
+﻿<Solution>
   <Configurations>
     <Platform Name="ARM64" />
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="CaesarSharp.CLI/CaesarSharp.CLI.csproj" />
   <Project Path="CaesarSharp.Core/CaesarSharp.Core.csproj" />
-  <Project Path="CaesarSharp.GUI/CaesarSharp.GUI.csproj" Id="9d9c7d99-7e28-4dab-a9e9-1168b4de7e39">
+  <Project Path="CaesarSharp/CaesarSharp.csproj" Id="9d9c7d99-7e28-4dab-a9e9-1168b4de7e39">
     <Platform Solution="*|ARM64" Project="ARM64" />
     <Platform Solution="*|x64" Project="x64" />
     <Platform Solution="*|x86" Project="x86" />

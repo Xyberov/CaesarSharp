@@ -24,5 +24,4 @@
 ## Структура проекта
 
 - `CaesarSharp.Core` — логика шифрования
-- `CaesarSharp.CLI` — консольный интерфейс
-- `CaesarSharp.GUI` — графический интерфейс (WinUI 3)
+- `CaesarSharp` — приложение (WinUI 3 GUI и CLI)

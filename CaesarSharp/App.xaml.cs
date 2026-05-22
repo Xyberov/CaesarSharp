@@ -1,6 +1,6 @@
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 
-namespace CaesarSharp.GUI
+namespace CaesarSharp
 {
     public partial class App : Application
     {

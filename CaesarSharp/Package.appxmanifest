@@ -16,7 +16,7 @@
   <mp:PhoneIdentity PhoneProductId="4d3af68e-6b6d-4bb7-b340-58e45ca65a05" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>CaesarSharp.GUI</DisplayName>
+    <DisplayName>CaesarSharp</DisplayName>
     <PublisherDisplayName>Belousov</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -35,8 +35,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="CaesarSharp.GUI"
-        Description="CaesarSharp.GUI"
+        DisplayName="CaesarSharp"
+        Description="CaesarSharp"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">

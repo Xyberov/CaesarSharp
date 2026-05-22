@@ -1,7 +1,7 @@
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 
-namespace CaesarSharp.GUI.Pages
+namespace CaesarSharp.Pages
 {
     public sealed partial class HomePage : Page
     {

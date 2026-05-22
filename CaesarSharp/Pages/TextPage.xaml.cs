@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.UI.Xaml;
@@ -9,7 +9,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using CaesarSharp.Core;
 
-namespace CaesarSharp.GUI.Pages
+namespace CaesarSharp.Pages
 {
     public sealed partial class TextPage : Page
     {

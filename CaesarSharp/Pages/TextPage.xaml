@@ -1,4 +1,4 @@
-<Page x:Class="CaesarSharp.GUI.Pages.TextPage"
+﻿<Page x:Class="CaesarSharp.Pages.TextPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Background="#FF000000">

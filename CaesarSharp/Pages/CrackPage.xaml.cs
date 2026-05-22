@@ -1,4 +1,4 @@
-using CaesarSharp.Core;
+﻿using CaesarSharp.Core;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System;
@@ -7,7 +7,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using CoreLanguage = CaesarSharp.Core.Language;
 
-namespace CaesarSharp.GUI.Pages
+namespace CaesarSharp.Pages
 {
     public sealed partial class CrackPage : Page
     {

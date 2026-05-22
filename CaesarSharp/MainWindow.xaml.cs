@@ -1,7 +1,7 @@
-using Microsoft.UI.Xaml;
-using CaesarSharp.GUI.Pages;
+﻿using Microsoft.UI.Xaml;
+using CaesarSharp.Pages;
 
-namespace CaesarSharp.GUI
+namespace CaesarSharp
 {
     public sealed partial class MainWindow : Window
     {
