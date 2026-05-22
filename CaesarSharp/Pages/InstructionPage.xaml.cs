@@ -47,6 +47,11 @@ namespace CaesarSharp.Pages
             "Поддерживаемые языки для взлома: русский, английский, немецкий, французский, испанский.\n\n" +
             "Важно: чем длиннее текст — тем точнее результат. На коротких фразах (менее 50 слов) программа может ошибиться.\n\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "КОМАНДНАЯ СТРОКА (CLI)\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "Программа также поддерживает работу через командную строку. Это позволяет автоматизировать шифрование, обрабатывать файлы скриптами и использовать пакетную обработку через терминал.\n\n" +
+            "Подробная инструкция по работе с CLI находится в файле «Инструкция.pdf» рядом с программой.\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
             "О ПРОГРАММЕ\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
             "Команда «Три мушкетёра», УрФУ, 2026\n\n" +
@@ -96,6 +101,11 @@ namespace CaesarSharp.Pages
             "4. Click \"Run\". The program will automatically detect the shift and display the decrypted text.\n\n" +
             "Supported languages for cracking: Russian, English, German, French, Spanish.\n\n" +
             "Important: the longer the text, the more accurate the result. For short texts (fewer than 50 words), the program may produce incorrect results.\n\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
+            "COMMAND LINE (CLI)\n" +
+            "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
+            "The program also supports command-line usage. This allows you to automate encryption, process files with scripts, and use batch processing via terminal.\n\n" +
+            "Detailed CLI instructions are available in the file \"Инструкция.pdf\" located next to the program.\n\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n" +
             "ABOUT\n" +
             "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n" +
