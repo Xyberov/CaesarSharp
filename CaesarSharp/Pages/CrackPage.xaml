@@ -68,10 +68,10 @@
             <Canvas Margin="0,96,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Width="1440" Height="928" Background="Transparent">
 
-                <Line Canvas.Top="439" X1="0" X2="1160" Y1="0" Y2="0"
+                <Line Canvas.Top="466" X1="0" X2="1112" Y1="0" Y2="0"
                       StrokeThickness="9" Stroke="White"/>
                 <Ellipse Width="43" Height="43" Fill="White"
-                         Canvas.Left="1130" Canvas.Top="418"/>
+                         Canvas.Left="1098" Canvas.Top="445"/>
 
                 <Line Canvas.Left="550" Canvas.Top="260" X1="0" X2="500" Y1="0" Y2="0"
                       StrokeThickness="9" Stroke="White"/>
@@ -85,8 +85,8 @@
 
                 <Line X1="0" X2="130" Y1="0" Y2="130"
                       StrokeThickness="9" Stroke="White"
-                      Canvas.Left="352" Canvas.Top="440"/>
-                <Line Canvas.Left="539" Canvas.Top="440" X1="0" X2="100" Y1="0" Y2="-100"
+                      Canvas.Left="353" Canvas.Top="467"/>
+                <Line Canvas.Left="215" Canvas.Top="467" X1="0" X2="100" Y1="0" Y2="-100"
                       StrokeThickness="9" Stroke="White"/>
 
                 <TextBox x:Name="InputBox"
@@ -104,34 +104,43 @@
                          Canvas.Left="184" Canvas.Top="550"
                          IsReadOnly="True"/>
 
+                <Rectangle Width="270" Height="64" StrokeThickness="1" Canvas.Left="420" Canvas.Top="408" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Black" />
+                    </Rectangle.Fill>
+                    <Rectangle.Stroke>
+                        <SolidColorBrush Color="Black" />
+                    </Rectangle.Stroke>
+                </Rectangle>
+
                 <Button Content="Запуск ⇅" Width="254" Height="51"
                         Background="#FF29750D" Foreground="White" BorderThickness="0"
                         FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
-                        FontSize="24" Canvas.Left="585" Canvas.Top="443" CornerRadius="10"
+                        FontSize="24" Canvas.Left="428" Canvas.Top="441" CornerRadius="10"
                         Click="RunButton_Click"/>
 
                 <Button Content="Загрузить файл ⤒" Width="254" Height="51"
                         Background="#FF29750D" Foreground="White" BorderThickness="0"
                         FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
-                        FontSize="24" Canvas.Left="1100" Canvas.Top="235" CornerRadius="10"
+                        FontSize="24" Canvas.Left="1096" Canvas.Top="235" CornerRadius="10"
                         Click="LoadFileButton_Click"/>
 
                 <Button Content="Сохранить файл ⤓" Width="254" Height="51"
                         Background="#FF29750D" Foreground="White" BorderThickness="0"
                         FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
-                        FontSize="24" Canvas.Left="1100" Canvas.Top="657" CornerRadius="10"
+                        FontSize="24" Canvas.Left="1096" Canvas.Top="656" CornerRadius="10"
                         Click="SaveFileButton_Click"/>
 
                 <TextBlock Text="Язык:" FontSize="24" Foreground="White"
                            FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
-                           Canvas.Left="269" Canvas.Top="452" Height="29" Width="67"/>
+                           Canvas.Left="1157" Canvas.Top="451" Height="29" Width="67"/>
 
                 <ComboBox x:Name="LanguageBox" SelectedIndex="0"
                           Width="158" Height="51" FontSize="24"
                           FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
                           Background="#FF29750D" BorderBrush="#FF29750D"
                           Foreground="White" CornerRadius="10"
-                          Canvas.Left="365" Canvas.Top="443">
+                          Canvas.Left="1240" Canvas.Top="440">
                     <ComboBoxItem Content="Русский" Tag="Russian"/>
                     <ComboBoxItem Content="English" Tag="English"/>
                     <ComboBoxItem Content="Deutsch" Tag="German"/>
