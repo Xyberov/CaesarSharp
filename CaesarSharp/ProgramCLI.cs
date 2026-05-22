@@ -44,6 +44,7 @@ namespace CaesarSharp
 
             try
             {
+                Console.OutputEncoding = System.Text.Encoding.UTF8;
                 Console.SetOut(new StreamWriter(Console.OpenStandardOutput()) { AutoFlush = true });
                 Console.SetError(new StreamWriter(Console.OpenStandardError()) { AutoFlush = true });
                 Console.SetIn(new StreamReader(Console.OpenStandardInput()));
