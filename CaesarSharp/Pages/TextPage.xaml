@@ -68,10 +68,10 @@
             <Grid Margin="0,96,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                   Width="1440" Height="285" Background="Transparent">
 
-                <TextBlock Text="Режим работы:" FontSize="30" Foreground="White"
+                <TextBlock Text="Режим работы:" FontSize="28" Foreground="White"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
-                           Height="40" Width="240" Margin="0,8,888,0" TextAlignment="Center"/>
+                           Height="38" Width="240" Margin="0,8,884,0" TextAlignment="Center"/>
 
                 <Button x:Name="EncryptButton" Content="Шифровать"
                         HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -89,10 +89,10 @@
                         FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
                         Click="DecryptButton_Click"/>
 
-                <TextBlock Text="Сдвиг:" FontSize="30" Foreground="White"
+                <TextBlock Text="Сдвиг:" FontSize="28" Foreground="White"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
                            FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
-                           Height="40" Width="96" Margin="262,8,0,0" TextAlignment="Center"/>
+                           Height="38" Width="96" Margin="266,8,0,0" TextAlignment="Center"/>
 
                 <ComboBox x:Name="ShiftBox"
                           HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -138,10 +138,10 @@
                     <ComboBoxItem Content="35"/>
                 </ComboBox>
 
-                <TextBlock Text="Язык:" FontSize="30" Foreground="White"
+                <TextBlock Text="Язык:" FontSize="28" Foreground="White"
                            FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
                            HorizontalAlignment="Center" VerticalAlignment="Center"
-                           Height="40" Width="80" Margin="710,8,0,0" TextAlignment="Center"/>
+                           Height="38" Width="80" Margin="714,8,0,0" TextAlignment="Center"/>
 
                 <ComboBox x:Name="LanguageBox"
                           HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -186,7 +186,8 @@
                 <Line X1="0" X2="130" Y1="0" Y2="130"
                       StrokeThickness="9" Stroke="White"
                       Canvas.Left="241" Canvas.Top="251"/>
-                <Line Canvas.Left="400" Canvas.Top="250" X1="0" X2="100" Y1="0" Y2="-100"
+                <Line Canvas.Left="360
+                      " Canvas.Top="250" X1="0" X2="100" Y1="0" Y2="-100"
                       StrokeThickness="9" Stroke="White"/>
 
                 <Button Content="Загрузить файл ⤒" Width="254" Height="51"
@@ -238,7 +239,14 @@
                         <SolidColorBrush x:Key="ButtonBackgroundPressed"     Color="#80000000"/>
                     </Button.Resources>
                 </Button>
-
+                <Rectangle Width="270" Height="64" StrokeThickness="1" Canvas.Left="416" Canvas.Top="218" >
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Black" />
+                    </Rectangle.Fill>
+                    <Rectangle.Stroke>
+                        <SolidColorBrush Color="Black" />
+                    </Rectangle.Stroke>
+                </Rectangle>
                 <Button Content="Запуск ⇅" Width="254" Height="51"
                         Background="#FF29750D" Foreground="White" BorderThickness="0"
                         FontFamily="ms-appx:///Assets/Fonts/Bitter-Regular.ttf#Bitter"
