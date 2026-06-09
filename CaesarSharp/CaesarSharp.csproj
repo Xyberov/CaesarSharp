@@ -3,6 +3,7 @@
 	<DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+	<ApplicationIcon>Assets\App.ico</ApplicationIcon>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>CaesarSharp</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -14,6 +15,11 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+	<ItemGroup>
+    <Content Include="Assets\App.ico">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+</ItemGroup>
   <ItemGroup>
     <None Remove="Assets\Fonts\Bitter-Bold.ttf" />
     <None Remove="Assets\Fonts\Bitter-Regular.ttf" />
