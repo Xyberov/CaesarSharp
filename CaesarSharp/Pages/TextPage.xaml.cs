@@ -14,7 +14,7 @@ namespace CaesarSharp.Pages
     public sealed partial class TextPage : Page
     {
         private bool _encryptMode = true;
-        private IReadOnlyList<StorageFile> _batchFiles = null;
+        private IReadOnlyList<StorageFile>? _batchFiles = null;
 
         private static readonly SolidColorBrush ActiveBrush =
             new SolidColorBrush(Windows.UI.Color.FromArgb(255, 60, 174, 17));
