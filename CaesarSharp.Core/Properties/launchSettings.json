@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CaesarSharp.Core": {
+      "commandName": "Project"
+    },
+    "Профиль 1": {
+      "commandName": "Executable"
+    }
+  }
+}
