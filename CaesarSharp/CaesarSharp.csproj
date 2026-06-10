@@ -1,93 +1,88 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-	<DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
-    <OutputType>WinExe</OutputType>
-	  
-    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
 
-	<Version>1.1.1</Version>
-	<AssemblyVersion>1.1.1.0</AssemblyVersion>
-	<FileVersion>1.1.1.0</FileVersion>
-	  
-	<ApplicationIcon>Assets\App.ico</ApplicationIcon>
-	  
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RootNamespace>CaesarSharp</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Platforms>x86;x64;ARM64</Platforms>
-    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
-    <UseWinUI>true</UseWinUI>
-    <WinUISDKReferences>false</WinUISDKReferences>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-	<ItemGroup>
-    <Content Include="Assets\App.ico">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-</ItemGroup>
-  <ItemGroup>
-    <None Remove="Assets\Fonts\Bitter-Bold.ttf" />
-    <None Remove="Assets\Fonts\Bitter-Regular.ttf" />
-    <None Remove="Assets\Fonts\montserrat-subrayada-latin-400-normal.ttf" />
-    <None Remove="Assets\Fonts\montserrat-subrayada-latin-700-normal.ttf" />
-    <None Remove="Package.appxmanifest" />
-    <None Remove="Pages\CrackPage.xaml" />
-    <None Remove="Pages\HomePage.xaml" />
-    <None Remove="Pages\InstructionPage.xaml" />
-    <None Remove="Pages\TextPage.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Manifest Include="$(ApplicationManifest)" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1839" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.1" />
-    <PackageReference Include="System.CommandLine" Version="3.0.0-preview.4.26230.115" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CaesarSharp.Core\CaesarSharp.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="Assets\Fonts\Bitter-Bold.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Assets\Fonts\Bitter-Regular.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Assets\Fonts\montserrat-subrayada-latin-400-normal.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Assets\Fonts\montserrat-subrayada-latin-700-normal.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\InstructionPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\CrackPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\TextPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\HomePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
-	</PropertyGroup>
 	<PropertyGroup>
+		<DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RootNamespace>CaesarSharp</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<ApplicationIcon>Assets\App.ico</ApplicationIcon>
+		<Platforms>x86;x64;ARM64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<PublishProfile>win-$(Platform).pubxml</PublishProfile>
+		<UseWinUI>true</UseWinUI>
+		<WinUISDKReferences>false</WinUISDKReferences>
+		<Nullable>enable</Nullable>
+		<Version>1.1.1</Version>
+		<AssemblyVersion>1.1.1.0</AssemblyVersion>
+		<FileVersion>1.1.1.0</FileVersion>
 		<PublishReadyToRun>false</PublishReadyToRun>
 		<PublishTrimmed>false</PublishTrimmed>
 		<WindowsPackageType>None</WindowsPackageType>
 	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Assets\Fonts\Bitter-Bold.ttf" />
+		<None Remove="Assets\Fonts\Bitter-Regular.ttf" />
+		<None Remove="Assets\Fonts\montserrat-subrayada-latin-400-normal.ttf" />
+		<None Remove="Assets\Fonts\montserrat-subrayada-latin-700-normal.ttf" />
+		<None Remove="Package.appxmanifest" />
+		<None Remove="Pages\CrackPage.xaml" />
+		<None Remove="Pages\HomePage.xaml" />
+		<None Remove="Pages\InstructionPage.xaml" />
+		<None Remove="Pages\TextPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="Assets\App.ico">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Assets\Fonts\Bitter-Bold.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Assets\Fonts\Bitter-Regular.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Assets\Fonts\montserrat-subrayada-latin-400-normal.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Update="Assets\Fonts\montserrat-subrayada-latin-700-normal.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Page Update="Pages\HomePage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Update="Pages\TextPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Update="Pages\CrackPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+		<Page Update="Pages\InstructionPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.28000.1839" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="2.0.1" />
+		<PackageReference Include="System.CommandLine" Version="3.0.0-preview.4.26230.115" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CaesarSharp.Core\CaesarSharp.Core.csproj" />
+	</ItemGroup>
+
 </Project>
